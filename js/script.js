@@ -1,18 +1,39 @@
-//Made by: Aiden McLeod
-//Made in: March 2022
+// Aiden McLeod
+// ICS2O-Unit5-07-HTML
+// May 10 2022
 
 'use strict'
 /**
- * This function calculates area of a sphere.
+ * Adds the integer the user chose added up to all the numbers from one to the integer
  */
-function calculate() {
-  // input
-  const radius = parseInt(document.getElementById('radius').value)
+if (navigator.serviceWorker) {
+  navigator.serviceWorker.register("/ICS2O-Unit5-07-HTML/sw.js", {
+    scope: "/ICS2O-Unit5-07-HTML/",
+  })
+}
 
-  // process
+/**
+ * Alerts "Hello, World!"
+ */
+function onButtonClick() {
+  const integer = document.getElementById("integer").value
+  var text = "1"
+  var counter = 1
+  var answer
 
-  const volume = (4/3)* Math.PI * Math.pow(radius, 3);
-
-  // output
-  document.getElementById('volume').innerHTML = 'Volume is: ' + volume.toFixed(2) + ' cm³'
+  if (integer > 0) {
+    answer = 1
+    for (let count = 1; count < integer; count++) {
+      counter++
+      text = text + " + " + counter
+      answer = answer + counter
+    }
+    document.getElementById("answer").innerHTML = "<h5>" + answer + "</h5><br><h5>is the answer of " + text + "</h5>"
+  } else if (integer == 0) {
+    answer = 0
+    text = "nothing."
+    document.getElementById("answer").innerHTML = "<h5>" + answer + "</h5><br><h5>is the answer of " + text + "</h5>"
+  } else {
+    document.getElementById("answer").innerHTML = "<h5>Error: This integer is negative.</h5>"
+  }
 }
