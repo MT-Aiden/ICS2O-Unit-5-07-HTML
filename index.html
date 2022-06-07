@@ -1,55 +1,68 @@
 <!DOCTYPE html>
-<!-- ICS2O-Unit5-07-HTML -->
 <html lang="en-ca">
   <head>
-    <meta charset="utf-8">
-    <meta name="description" content="Test site for ICS2O">
-    <meta name="keywords" content="mths, ICS2O">
-    <meta name="author" content="Aiden McLeod">
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Division, with JS" />
+    <meta name="keywords" content="mths, ics2o" />
+    <meta name="author" content="Aiden McLeod" />
     <meta name="theme-color" content="#FFFFFF" />
-    <link rel="canonical" href="https://MT-Aiden.github.io/ICS2O-Unit5-07-HTML/" />
-    <link rel="manifest" href="/ICS2O-Unit5-07-HTML/manifest.webmanifest" />
+    <title>PI, with JS</title>
+    <link rel="canonical" href="https://MT-Aiden.github.io/ICS2O-Unit5-08/" />
+    <link rel="manifest" href="/ICS2O-Unit5-08/manifest.webmanifest" />
     <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" media="none" onload="if(media!='all')media='all'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"></noscript>
-    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css" media="none" onload="if(media!='all')media='all'"><noscript><link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css"></noscript>
+    <link rel="stylesheet" href="https://fonts. googleapis.com/icon?family=Material+Icons" media="none" onload="if(media!='all')media='all'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"></noscript>
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.light_green-green.min.css" />
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
-    <title>Adding Integers with a for Loop</title>
   </head>
   <body>
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("./js/sw.js");
+      }
+    </script>
     <script src="./js/script.js"></script>
-    <div class="mdl-layout mdl-js-layout">
-      <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-        <header class="mdl-layout__header">
-          <div class="mdl-layout__header-row">
-            <span class="mdl-layout-title">Adding Integers with a for Loop</span>
-            <div class="mdl-layout-spacer"></div>
-            <nav class="mdl-navigation mdl-layout--large-screen-only">
-              <a class="mdl-navigation__link" href="./">Index</a>
-            </nav>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+          <span class="mdl-layout-title">Division, with JS</span>
+        </div>
+      </header>
+      <main class="mdl-layout__content">
+        <h5>Enter the two integers</h5>
+        <br>
+        <h10>Integer 1:</h10>
+        <!-- Numeric Textfield -->
+        <form action="#">
+          <div class="mdl-textfield mdl-js-textfield">
+            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="integer1">
+            <label class="mdl-textfield__label" for="integer1">Put the integer here</label>
+            <span class="mdl-textfield__error">Input is not a number!</span>
           </div>
-        </header>
-      </div>
+        </form>
+        <br>
+        <h10>Integer 2:</h10>
+        <!-- Numeric Textfield -->
+        <form action="#">
+          <div class="mdl-textfield mdl-js-textfield">
+            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="integer2">
+            <label class="mdl-textfield__label" for="integer2">Put the integer here</label>
+            <span class="mdl-textfield__error">Input is not a number!</span>
+          </div>
+        </form>
+        <br>
+        <!-- Raised button with ripple -->
+        <button
+          class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+          onclick="myButtonClicked()"
+        >
+          Calculate
+        </button>
+        <div id="answers"></div>
+      </main>
     </div>
-    <br>
-    <br>
-    <br>
-    <h3>Enter integer:</h3>
-    <!-- Numeric Textfield with Floating Label -->
-    <form action="#">
-      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <input class="mdl-textfield__input" type="number" id="integer">
-        <label class="mdl-textfield__label" for="integer">Integer...</label>
-        <span class="mdl-textfield__error">Input is not an integer!</span>
-      </div>
-    </form>
-    <!-- Accent-colored raised button with ripple -->
-    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" onclick="onButtonClick()">
-      Calculate
-    </button>
-    <div id="answer"></div>
   </body>
 </html>
